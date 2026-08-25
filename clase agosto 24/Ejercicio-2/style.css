@@ -1,0 +1,77 @@
+*{
+    /* elimino margenes */
+    margin: 0;
+    /* elimino el relleno */
+    padding: 0;
+    /* evito que el ancho se sume al relleno */
+    box-sizing: border-box; 
+}
+/* Estilos generales */
+/* slector a partir del nombre */
+body{
+    /*fondo */
+    background: url(Assets/imagen-back.jpg) 0 center no-repeat;
+    background-size: cover;
+
+}
+main{
+    /* configuro el ancho */
+    width: 100%;
+    max-width: 700px;
+    /* centro el contenedor */
+    /* margin: top right bottom left */
+    margin: 0 auto 0 auto;
+    background: rgba(26, 26, 36, 0,);
+    /* relleno: top right bottom left */
+    padding: 20px 20px 0px 20px;
+}
+
+
+img{
+    /* configurar el ancho al 100% */
+    width: 100%;
+   
+}
+
+h1{
+    /* familia tipográfica */
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    /* color de fuente */
+    color: rgb(255, 0, 98);
+    font-size: 60px;
+    text-align: center;
+}
+
+p{
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+  /* Alinear justificado */
+  text-align: justify;
+  /* margen: top right bottom left; */
+  margin: 20px 0 20px 0;
+}
+
+/* Seleccion etiqueta por clase */
+.subtitulo-pf{
+    /* familia tipografica */
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+    color: rgb(255, 255, 255); 
+    /* margen: top right bottom left; */
+    margin: 20px 0 20px 0;
+}
+
+/* selecciona por ID */
+#parrafo-destacado{
+    /* color de fuente */
+    color: rgb(255, 0, 98) !important;
+    font-weight: 500;
+}
