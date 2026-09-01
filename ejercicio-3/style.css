@@ -1,0 +1,121 @@
+/*
+0. Selectores generales
+
+*/
+
+/* 0. Selectores generales */
+*{
+    margin: 0;
+    padding: 0;
+    /* Evita que el ancho se sume al padding */
+    box-sizing: border-box;
+}
+
+:root { 
+    --color-principal: #D6006F;
+    --color-acento: #6FD600;
+    --color-acento2: #006FD6;    
+    --color-texto: #323232;                                       
+}
+
+.hide-element{
+    display: none;
+}
+
+.flex-elements{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+/* 1. Tipografías */
+h1{ 
+   font-family: "Noto Sans", sans-serif;
+   font-weight: 700;
+   font-style: normal;
+   font-size: 30px;
+   color: var(--color-principal)
+}
+h2{
+    font-family: "Noto Sans", sans-serif;
+   font-weight: 700;
+   font-style: normal;
+   font-size: 36px;
+   color: var(--color-acento);
+   --color-texto:
+}
+h3{
+    font-family: "Noto Sans", sans-serif;
+   font-weight: 700;
+   font-style: normal;
+   font-size: 22px;
+   color: var(--color-acento2)
+}
+p{
+     font-family: "Noto Sans", sans-serif;
+     font-weight: 400;
+     font-style: normal;
+     font-size: 14px;
+     color: var(--color-texto);
+     text-align: justify
+}
+
+/* Cabecera */
+#Cabecera-web{
+    /* rellleno: top right bottom left; */
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* border-bottom: grosor estilo color; */
+    border-bottom: 3px solid var(--color-principal);
+}
+
+.bt-principal{
+     font-family: "Noto Sans", sans-serif;
+     font-weight: 400;
+     font-style: normal;
+     font-size: 16px;
+     text-decoration: none;
+     color: white;
+     background: var(--color-principal);
+     padding: 8px 15px 8px 15px;
+     border-radius: 3px;
+     /* animacion por transicion: duracion caracteristica animacion */
+     transition: 0.3s all linear;
+}
+.bt-principal:hover{
+    background: var(--color-acento);
+    padding: 8px 20px 8px 20px
+}
+
+
+
+/* =========================== */
+@media (max-width:600px) {
+    #Cabecera-web{
+        flex-direction: column;
+    }
+
+    #Cabecera-web > nav{
+        width: 100%;
+    }
+    
+    .bt-principal{
+        display: block;
+        width: 100%;
+        text-align: center;
+        border-radius: 0;
+        border-bottom: 1px solid var(--color-acento);
+    }
+}
+
+.articles{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+img{
+    width: 100%; 
+}
