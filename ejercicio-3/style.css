@@ -1,6 +1,8 @@
 /*
 0. Selectores generales
-
+1. tipografias
+2.
+3.
 */
 
 /* 0. Selectores generales */
@@ -24,8 +26,8 @@
 
 .flex-elements{
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    align-items: stretch;
+    justify-content: space-between;
 }
 
 /* 1. Tipografías */
@@ -42,7 +44,10 @@ h2{
    font-style: normal;
    font-size: 36px;
    color: var(--color-acento);
-   --color-texto:
+   /*centro los titulos de section*/
+   text-align: center;
+   /*margen*/
+   margin: 0 0 20px;
 }
 h3{
     font-family: "Noto Sans", sans-serif;
@@ -71,6 +76,26 @@ p{
     border-bottom: 3px solid var(--color-principal);
 }
 
+.bt-mas{
+  display: inline-block;
+    margin: 15px 0;
+  font-family: "Noto Sans", sans-serif;
+     font-weight: 400;
+     font-style: normal;
+     font-size: 14px;
+     text-decoration: none;
+     color: white;
+     background: var(--color-principal);
+     padding: 8px 15px 8px 15px;
+     border-radius: 3px;
+     /* animacion por transicion: duracion caracteristica animacion */
+     transition: 0.3s all linear;
+}
+.bt-mas:hover{
+background: var(--color-acento);
+}
+
+
 .bt-principal{
      font-family: "Noto Sans", sans-serif;
      font-weight: 400;
@@ -87,6 +112,12 @@ p{
 .bt-principal:hover{
     background: var(--color-acento);
     padding: 8px 20px 8px 20px
+
+}
+.articulo-index{
+  margin: 10px 15px;
+  padding: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4) 
 }
 
 
@@ -108,7 +139,10 @@ p{
         border-radius: 0;
         border-bottom: 1px solid var(--color-acento);
     }
-}
+    .articles{
+    flex-direction: column;
+    }
+}     
 
 .articles{
     display: flex;
@@ -118,4 +152,15 @@ p{
 
 img{
     width: 100%; 
+}
+#web{
+  padding:100px 0;
+}
+
+#wrap-ba{
+    background:var(--color-principal);
+    padding: 100px 20px;
+    }
+#wrap-ba{
+  color: white;
 }
