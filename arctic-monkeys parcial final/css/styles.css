@@ -1,0 +1,305 @@
+/* ARCTIC MONKEYS */
+:root {
+  --negro-900: #050505;
+  --negro-700: #151515;
+  --negro-500: #2E2E2E;
+  --gris-700: #5E5A54;
+  --gris-500: #9C978F;
+  --crema-800: #CFCCC6;
+  --crema-600: #F2EFE9;
+  --crema-500: #F3F2EF;
+  --tostado-600: #C8B79E;
+  --margen: 120px;
+}
+
+/* ----- General ----- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--negro-900);
+  color: var(--crema-600);
+  font-family: "Jost", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+img { display: block; width: 100%; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+a:focus, button:focus, input:focus { outline: 3px solid var(--tostado-600); outline-offset: 4px; }
+
+.contenedor { max-width: 1920px; margin: 0 auto; padding: 0 var(--margen); }
+.grano { background-image: url(../img/grano.png); }
+
+/* ----- Estilos de texto ----- */
+.top-hero { font-size: 180px; font-weight: 900; text-transform: uppercase; line-height: 0.88; letter-spacing: -3px; }
+.titulo-destacado { font-size: 96px; font-weight: 900; text-transform: uppercase; line-height: 0.95; }
+.titulo-principal { font-size: 28px; font-weight: 700; line-height: 1.15; }
+.titulo-secundario { font-size: 20px; }
+.titulo-tercer { font-size: 18px; font-weight: 600; text-transform: uppercase; }
+.destacado { font-weight: 600; }
+.label { font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.2em; }
+.small-text { font-family: "Courier Prime", monospace; font-size: 13px; }
+.cursiva { font-style: italic; }
+.gris { color: var(--gris-500); }
+.gris-oscuro { color: var(--gris-700); }
+
+/* ----- Botones ----- */
+.boton {
+  display: inline-block;
+  padding: 16px 30px;
+  border: 1px solid var(--crema-600);
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.boton-claro { background: var(--crema-500); color: var(--negro-900); }
+.boton-claro:hover { background: var(--crema-800); }
+.boton-borde:hover { background: var(--negro-500); }
+.boton-chico { padding: 12px 22px; }
+
+.enlace, .enlace-chico { font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
+.enlace { border-bottom: 1px solid; padding-bottom: 6px; }
+.enlace-chico:hover { text-decoration: underline; }
+
+/* ----- Encabezado ----- */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  background: rgba(5, 5, 5, 0.9);
+  border-bottom: 1px solid var(--negro-500);
+}
+.header-contenido { display: flex; justify-content: space-between; align-items: center; height: 92px; }
+.marca { font-size: 18px; font-weight: 600; }
+.menu { display: flex; gap: 40px; }
+.menu a { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gris-500); }
+.menu a:hover, .menu a.activo { color: var(--crema-600); }
+.menu a.activo::before { content: "• "; color: var(--tostado-600); }
+
+.menu-movil {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  flex-direction: column;
+  padding: 0 20px 40px;
+  background: var(--negro-900);
+}
+.menu-movil:target { display: flex; }
+.menu-movil-arriba { display: flex; justify-content: space-between; align-items: center; height: 80px; margin-bottom: 28px; }
+.menu-movil a { padding: 16px 12px; border-bottom: 1px solid var(--negro-500); font-size: 44px; font-weight: 900; text-transform: uppercase; line-height: 1; }
+.menu-movil a:hover { background: var(--negro-700); color: var(--tostado-600); }
+.menu-movil a small { font-family: "Courier Prime", monospace; font-size: 13px; color: var(--gris-500); }
+.menu-movil .boton-cerrar,
+.menu-movil .boton { border: none; border-radius: 50px; background: var(--crema-500); color: var(--negro-900); font-size: 12px; letter-spacing: 0.2em; }
+.menu-movil .boton-cerrar { padding: 12px 16px; }
+.menu-movil .boton { margin-top: auto; text-align: center; }
+
+/* ----- Portada ----- */
+.hero { padding: 164px 0 140px; }
+.hero-datos, .hero-foto figcaption { display: flex; justify-content: space-between; color: var(--gris-500); }
+hr { border: none; border-top: 1px solid var(--negro-500); margin: 40px 0; }
+.hero-fila { display: grid; grid-template-columns: 520px 1fr; gap: 120px; align-items: end; }
+.hero-texto p { margin-bottom: 40px; }
+.hero-botones { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; }
+.hero-foto img { height: 560px; object-fit: cover; filter: grayscale(100%) contrast(1.25); }
+.hero-foto figcaption { margin-top: 12px; }
+
+/* ----- Cinta de canciones (se mueve sola con una animación) ----- */
+.cinta { overflow: hidden; background: var(--crema-500); color: var(--negro-900); }
+.cinta ul { display: flex; gap: 40px; width: max-content; padding: 18px 40px; animation: mover-cinta 20s linear infinite alternate; }
+.cinta:hover ul { animation-play-state: paused; }
+.cinta li { font-size: 28px; font-weight: 700; }
+.cinta li small { font-family: "Courier Prime", monospace; font-size: 13px; color: var(--gris-700); }
+
+@keyframes mover-cinta {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-100% + 100vw)); }
+}
+
+/* ----- Secciones ----- */
+.seccion { padding: 180px 0; }
+.seccion-clara { background: var(--crema-500); color: var(--negro-900); }
+.encabezado-seccion { display: grid; grid-template-columns: 300px 1fr; gap: 120px; margin-bottom: 80px; }
+.encabezado-seccion .label { padding-top: 14px; }
+.encabezado-seccion h2 { margin-bottom: 32px; }
+.encabezado-seccion .titulo-secundario { max-width: 760px; }
+
+/* ----- La banda ----- */
+.integrantes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+.foto { position: relative; height: 500px; overflow: hidden; }
+.foto img { height: 100%; object-fit: cover; filter: grayscale(100%) contrast(1.25); transition: 0.5s; }
+.foto:hover img { transform: scale(1.04); }
+.numero { position: absolute; top: 20px; right: 20px; font-weight: 700; color: var(--crema-600); }
+.nombre-abajo { display: flex; justify-content: space-between; align-items: baseline; margin-top: 16px; }
+.nombre-abajo p { color: var(--gris-700); }
+
+.nombre-sobre-foto, .dato, .ayuda, .boton-menu { display: none; }
+
+.parallax {
+  position: relative;
+  overflow: hidden;
+  padding: 220px 0;
+  background-image: linear-gradient(to right, var(--negro-900) 40%, rgba(5, 5, 5, 0.6)),
+    url(https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Glasto2023_%28125_of_468%29_%2853009329035%29.jpg/1280px-Glasto2023_%28125_of_468%29_%2853009329035%29.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.capa { position: absolute; inset: 0; }
+.anio-gigante {
+  position: absolute;
+  left: -40px;
+  top: 32%;
+  font-size: 560px;
+  font-weight: 900;
+  line-height: 0.8;
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(242, 239, 233, 0.07);
+}
+.luz {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background: linear-gradient(rgba(242, 239, 233, 0.16), transparent);
+  clip-path: polygon(48% 0, 52% 0, 100% 100%, 0 100%);
+}
+.luz1 { left: 64%; width: 46%; }
+.luz2 { left: 78%; width: 24%; opacity: 0.6; }
+.luz3 { left: 2%; width: 28%; opacity: 0.45; }
+
+.parallax .contenedor { position: relative; }
+.parallax .encabezado-seccion { margin-bottom: 120px; }
+.datos { display: grid; grid-template-columns: repeat(4, 1fr); }
+.dato-item { padding: 32px 40px 0; border-top: 1px solid var(--negro-500); border-left: 1px solid var(--negro-500); }
+.dato-item:first-child { padding-left: 0; border-left: none; }
+
+/* ----- Discografía ----- */
+.discos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 96px 32px; }
+.disco { display: flex; flex-direction: column; gap: 16px; }
+.disco img { aspect-ratio: 1; object-fit: cover; transition: 0.3s; }
+.disco:hover img { transform: translateY(-6px); }
+.disco-datos { display: flex; justify-content: space-between; color: var(--gris-700); padding-bottom: 16px; border-bottom: 1px solid var(--crema-800); }
+.disco a { align-self: flex-start; }
+.disco-vacio { display: flex; flex-direction: column; justify-content: center; align-items: center; aspect-ratio: 1; border: 1px dashed var(--negro-900); color: var(--gris-700); }
+.interrogacion { font-size: 96px; line-height: 1; font-weight: 900; font-style: italic; color: var(--negro-900); }
+
+/* ----- correo ----- */
+.correo { text-align: center; }
+.correo h2 { margin: 28px 0; }
+.texto-correo { max-width: 620px; margin: 0 auto; }
+form { display: flex; align-items: flex-end; gap: 24px; max-width: 640px; margin: 50px auto 0; }
+.campo { flex: 1; text-align: left; }
+.campo label { display: block; margin-bottom: 12px; }
+input {
+  width: 100%;
+  padding: 6px 0 12px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--negro-500);
+  color: var(--crema-600);
+  font-family: "Jost", sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+}
+input:focus { outline: none; border-bottom: 2px solid var(--tostado-600); }
+
+/* ----- Pie de página ----- */
+.footer { padding: 120px 0 40px; }
+.footer-arriba { display: flex; justify-content: space-between; }
+.footer-columnas { display: flex; gap: 96px; }
+.footer-columnas h2 { margin-bottom: 16px; }
+.footer-columnas a { display: block; margin-bottom: 12px; }
+.footer-columnas a:hover { color: var(--tostado-600); }
+.marca-gigante { margin: 96px 0; font-size: 9.5vw; font-weight: 900; line-height: 0.9; white-space: nowrap; }
+.footer-abajo { display: flex; justify-content: space-between; padding-top: 20px; margin-bottom: 12px; border-top: 1px solid var(--negro-500); color: var(--gris-500); }
+.creditos { font-size: 11px; margin-top: 12px; }
+
+
+/* ===== TABLET Y PORTÁTIL ===== */
+@media (max-width: 1280px) {
+  :root { --margen: 64px; }
+  .top-hero { font-size: 11vw; }
+  .titulo-destacado { font-size: 6.5vw; }
+  .hero-fila, .encabezado-seccion { grid-template-columns: 1fr; gap: 40px; }
+  .integrantes, .discos, .datos { grid-template-columns: repeat(2, 1fr); }
+  .anio-gigante { font-size: 34vw; }
+}
+
+
+/* ===== CELULAR ===== */
+@media (max-width: 760px) {
+  :root { --margen: 20px; }
+  .top-hero { font-size: 64px; }
+  .titulo-destacado { font-size: 44px; }
+  .titulo-principal { font-size: 24px; }
+  .titulo-secundario { font-size: 17px; }
+  .ocultar-movil, .menu { display: none; }
+
+  /* Encabezado */
+  .header-contenido { height: 76px; }
+  .marca { font-size: 14px; }
+  .boton-menu {
+    display: block;
+    padding: 12px 16px;
+    border: 1px solid var(--gris-700);
+    border-radius: 50px;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  /* Portada */
+  .hero { padding: 112px 0 72px; }
+  hr { margin: 24px 0; }
+  .hero-fila { display: flex; flex-direction: column-reverse; gap: 24px; }
+  .hero-foto img { height: 260px; }
+  .hero-texto p { margin-bottom: 24px; }
+  .hero-botones { flex-direction: column; align-items: stretch; gap: 16px; text-align: center; }
+  .hero-botones .enlace { align-self: flex-start; }
+
+  /* Cinta */
+  .cinta ul { gap: 28px; padding: 14px 20px; }
+
+  /* Secciones */
+  .seccion { padding: 88px 0; }
+  .encabezado-seccion { gap: 20px; margin-bottom: 32px; }
+  .encabezado-seccion h2 { margin-bottom: 20px; }
+
+  /* La banda: carrusel que se desliza con el dedo */
+  .integrantes { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; }
+  .integrante { flex: 0 0 290px; scroll-snap-align: start; }
+  .foto { height: 360px; }
+  .nombre-abajo { display: none; }
+  .nombre-sobre-foto { display: block; position: absolute; left: 20px; bottom: 20px; text-transform: uppercase; text-shadow: 0 2px 12px black; color: var(--crema-600); }
+  .dato { display: block; margin-top: 14px; }
+  .ayuda { display: block; margin-top: 16px; font-size: 14px; color: var(--gris-700); }
+
+  /* Historia */
+  .parallax { padding: 88px 0; }
+  .parallax .encabezado-seccion { margin-bottom: 40px; }
+  .anio-gigante { font-size: 220px; top: 50%; }
+  .luz2, .luz3 { display: none; }
+  .dato-item { padding: 20px 0 24px 16px; }
+  .dato-item:nth-child(odd) { padding-left: 0; border-left: none; }
+  .dato-item .titulo-destacado { font-size: 64px; }
+
+  /* Discos */
+  .discos { grid-template-columns: 1fr; gap: 56px; }
+
+  /* Correo */
+  .correo { text-align: left; }
+  form { flex-direction: column; align-items: stretch; }
+
+  /* Pie */
+  .footer { padding: 64px 0 28px; }
+  .footer-arriba { flex-direction: column; gap: 40px; }
+  .footer-columnas { gap: 40px; }
+  .marca-gigante { margin: 48px 0; font-size: 9vw; }
+  .footer-abajo { flex-direction: column; }
+}
